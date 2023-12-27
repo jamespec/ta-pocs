@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="instruction-header">
+        <div class="instructionId">{{ "Id" }}</div>
+        <div class="action">{{ "B/S" }}</div>
+        <div class="amount">{{ "Amount" }}</div>
+        <div class="securityId">{{ "Security Id" }}</div>
+        <div class="fsrAccount">{{ "Account" }}</div>
+        <div class="tradeDate">{{ "Trade Date" }}</div>
+    </div>
+
+    <div>
+        <ul>
+            <li class="instruction-item" *ngFor="let instruction of getSortedInstructions()">
+                <div class="instructionId">{{ instruction.instructionId }}</div>
+                <div class="action center">{{ instruction.action }}</div>
+                <div class="amount">{{ instruction.amount | currency }}</div>
+                <div class="securityId">{{ instruction.securityId }}</div>
+                <div class="fsrAccount">{{ instruction.fsrAccount }}</div>
+                <div class="tradeDate">{{ instruction.tradeDate }}</div>
+            </li>
+        </ul>
+    </div>
+</div>

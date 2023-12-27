@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    /* margin: -3px -8px 0 -8px; */
+    padding: 5px 8px 5px 8px;
+    border-top: 2px solid #818285;
+    border-bottom: 2px solid #818285;
+  /*  color: purple; */
+    background-color: lightblue
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .left * {
+    margin-right: 25px;
+  }
+  
+  .logo {
+    height: 125px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  
+  .right {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+  }
+  
+  .right * {
+    margin-left: 25px;
+  }
+  
+  .right img {
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  

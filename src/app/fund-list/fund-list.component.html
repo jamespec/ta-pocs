@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="funds fund-header">
+        <div class="securityId">{{ "SecurityId" }}</div>
+        <div class="fundNumber">{{ "Fund Number" }}</div>
+        <div class="fundName">{{ "Fund Name" }}</div>
+        <div class="deployAddress">{{ "Deploy Address" }}</div>
+    </div>
+
+    <ul>
+        <li class="funds fund-item" *ngFor="let fund of getSortedFunds()">
+            <div class="securityId">{{ fund.securityId }}</div>
+            <div class="fundNumber">{{ fund.fundNumber }}</div>
+            <div class="fundName">{{ fund.fundName }}</div>
+            <div class="deployAddress">{{ fund.deployAddress }}</div>
+        </li>
+    </ul>
+</div>

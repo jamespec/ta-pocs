@@ -63,7 +63,8 @@
               "browserTarget": "ta-pocs:build:production"
             },
             "development": {
-              "browserTarget": "ta-pocs:build:development"
+              "browserTarget": "ta-pocs:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

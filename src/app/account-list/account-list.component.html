@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="accounts account-header">
+        <div class="fsrAccount">Account</div>
+        <div class="name">Name</div>
+        <div class="walletAddress">Wallet Address</div>
+    </div>
+
+    <ul>
+        <li class="accounts account-item" *ngFor="let account of getSortedAccounts()">
+            <div class="fsrAccount">{{ account.fsrAccount }}</div>
+            <div class="name">{{ account.name }}</div>
+            <div class="walletAddress">{{ account.walletAddress }}</div>
+        </li>
+    </ul>
+</div>

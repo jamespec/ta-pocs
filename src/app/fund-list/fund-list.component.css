@@ -1,0 +1,47 @@
+ul {
+    margin-top: 0px;
+}
+
+.funds {
+    display: flex;
+
+    justify-content: space-between;
+    justify-content: left;
+
+    margin-top: 0px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+}
+
+.fund-header {
+    padding-top: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #818285;
+}
+
+.fund-item {
+    font-size: 14px;
+    border-bottom: 2px solid #818285;
+}
+
+.securityId {
+    width: 100px;
+    padding-right: 10px;
+}
+
+.fundNumber {
+    width: 130px;
+    padding-right: 10px;
+}
+
+.fundName {
+    width: 300px;
+    padding-right: 10px;
+}
+
+.deployAddress {
+    /* width: 350px; */
+    padding-right: 10px;
+}

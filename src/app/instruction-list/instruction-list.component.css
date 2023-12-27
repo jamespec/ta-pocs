@@ -1,0 +1,64 @@
+ul {
+    margin-top: 0px;
+}
+
+.container {
+    padding-top: 16px;
+    padding-left: 10px;
+}
+
+.instruction-header {
+    display: flex;
+    justify-content: left;
+
+    margin-top: 0px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 0px;
+
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #818285;
+}
+
+.instruction-item {
+    display: flex;
+    justify-content: left;
+
+    margin-top: 0px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 0px;
+
+    font-size: 14px;
+    border-bottom: 2px solid #818285;
+}
+
+.instructionId {
+    width: 20px;
+    padding-right: 0px;
+}
+
+.action {
+    width: 60px;
+    justify-content: center;
+}
+
+.amount {
+    width: 200px;
+    justify-content: center;
+}
+
+.securityId {
+    width: 120px;
+}
+
+.fsrAccount {
+    width: 120px;
+}
+
+.tradeDate {
+    width: 100px;
+}
