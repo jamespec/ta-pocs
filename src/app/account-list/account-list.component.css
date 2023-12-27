@@ -4,8 +4,6 @@ ul {
 
 .accounts {
     display: flex;
-
-    justify-content: space-between;
     justify-content: left;
 
     margin-top: 0px;

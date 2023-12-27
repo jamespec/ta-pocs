@@ -4,11 +4,10 @@ ul {
 
 .funds {
     display: flex;
-
-    justify-content: space-between;
     justify-content: left;
 
     margin-top: 0px;
+    margin-bottom: 0px;
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: 10px;
@@ -28,20 +27,16 @@ ul {
 
 .securityId {
     width: 100px;
-    padding-right: 10px;
 }
 
 .fundNumber {
     width: 130px;
-    padding-right: 10px;
 }
 
 .fundName {
     width: 300px;
-    padding-right: 10px;
 }
 
 .deployAddress {
-    /* width: 350px; */
-    padding-right: 10px;
+    width: 350px;
 }

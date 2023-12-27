@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="instruction-header">
+    <div class="instruction instruction-header">
         <div class="instructionId">{{ "Id" }}</div>
         <div class="action">{{ "B/S" }}</div>
         <div class="amount">{{ "Amount" }}</div>
@@ -10,7 +10,7 @@
 
     <div>
         <ul>
-            <li class="instruction-item" *ngFor="let instruction of getSortedInstructions()">
+            <li class="instruction instruction-item" *ngFor="let instruction of getSortedInstructions()">
                 <div class="instructionId">{{ instruction.instructionId }}</div>
                 <div class="action center">{{ instruction.action }}</div>
                 <div class="amount">{{ instruction.amount | currency }}</div>
