@@ -2,6 +2,10 @@ ul {
     margin-top: 0px;
 }
 
+.container {
+    padding-left: 10px;
+}
+
 .funds {
     display: flex;
     justify-content: left;
@@ -10,7 +14,6 @@ ul {
     margin-bottom: 0px;
     padding-top: 6px;
     padding-bottom: 6px;
-    padding-left: 10px;
 }
 
 .fund-header {

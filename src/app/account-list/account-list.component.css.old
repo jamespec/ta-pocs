@@ -1,0 +1,67 @@
+ul {
+    margin-top: 0px;
+}
+
+.container {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+
+.account-header {
+    display: flex;
+    justify-content: left;
+
+    padding-top: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #818285;
+}
+
+.account-list {
+    display: flex;
+    justify-content:space-between;
+    border-bottom: 2px solid #818285;
+}
+
+.account-items {
+    display: flex;
+    justify-content: left;
+
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 14px;
+}
+
+.edit {
+    display: flex;
+    justify-content: right;
+
+/*    width: 100px; */
+}
+
+.fsrAccount {
+    width: 100px;
+    padding-right: 10px;
+}
+
+.name {
+    width: 350px;
+    padding-right: 10px;
+}
+
+.currency {
+    width: 50px;
+    padding-right: 10px;
+}
+
+.walletAddress {
+    /* width: 350px; */
+    padding-right: 10px;
+}
+
+.modal {
+    display:block;
+
+    border-radius: 0.5rem;
+}

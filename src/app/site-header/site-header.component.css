@@ -9,6 +9,12 @@
     margin-bottom: 0px;
 }
 
+.home {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px 0px 00px 0px;
+}
+
 .title {
     display: flex;
     justify-content: center;
@@ -28,5 +34,5 @@
   }
   
 .item {
-    padding: 5px 15px 5px 15px;
+    padding: 15px 15px 15px 15px;
 }

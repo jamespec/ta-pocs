@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+
 import { IAccount } from './account.model';
 import { AccountsService } from './accounts.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-account-list',
   templateUrl: './account-list.component.html',
   styleUrls: ['./account-list.component.css']
 })
-export class AccountListComponent {
+export class AccountListComponent implements OnInit, AfterViewInit {
   accounts!: IAccount[]
-  sortBy: string = ''
+
+  displayedColumns: string[] = ['fsrAccount', 'name', 'currency', 'walletAddress']
+  dataSource!: MatTableDataSource<IAccount>
+  dataInitialized: boolean = false
 
   constructor(
     private accountsSrv: AccountsService,
@@ -18,23 +25,23 @@ export class AccountListComponent {
     private route: ActivatedRoute
   ) { }
 
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   ngOnInit() {
     console.log('ngOnInit - AccountListComponent')
-    this.accountsSrv.getAccounts().subscribe( (accounts) => { this.accounts = accounts})
-
-    this.route.queryParams.subscribe( (params) => {
-      this.sortBy = params['sortBy'] ?? ''
-      // console.log(`Filter: ${this.sortBy}`)
+    this.accountsSrv.getAccounts().subscribe((accounts) => {
+      this.accounts = accounts
+      this.dataSource = new MatTableDataSource<IAccount>(this.accounts)
+      this.dataInitialized = true
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
     })
   }
 
-  getSortedAccounts(): IAccount[] {
-    // console.log(`getSortedAccounts with accounts of: ${JSON.stringify(this.accounts)}`)
-    return this.accounts;
-
-    // return this.sortBy === '' || !this.accounts
-    //   ? this.accounts
-    //   : this.accounts.sort( (a: IAccount, b: IAccount) => a.fsrAccount - b.fsrAccount  )
+  ngAfterViewInit() {
+    console.log()
+    if (this.dataInitialized) {
+    }
   }
 }
-

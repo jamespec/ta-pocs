@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="account-header">
+        <div class="fsrAccount">Account</div>
+        <div class="name">Name</div>
+        <div class="currency">CCY</div>
+        <div class="walletAddress">Wallet Address</div>
+    </div>
+
+    <ul>
+        <li class="account-list" *ngFor="let account of getSortedAccounts()">
+            <div class="account-items">
+                <div class="fsrAccount">{{ account.fsrAccount }}</div>
+                <div class="name">{{ account.name }}</div>
+                <div class="currency">{{ account.currency }}</div>
+                <div class="walletAddress">{{ account.walletAddress }}</div>
+            </div>
+            <div class="edit">
+                <a><img src="/assets/images/edit_FILL0_wght400_GRAD0_opsz24.png" (click)="openEditDialog(account)"
+                        alt="Edit"></a>
+            </div>
+        </li>
+    </ul>
+
+    <dialog edit-dialog >
+        <div>This is a Dialog</div>
+        <form name="account">
+            <div>FSR Account:
+                <input type="text" name="fsrAccount" [(ngModel)]="editAccount.fsrAccount" placeholder="FSR Account" />
+            </div>
+            <div>Name:
+                <input type="text" name="name" [(ngModel)]="editAccount.name" placeholder="Name" />
+            </div>
+            <div>CCY:
+                <input type="text" name="currency" [(ngModel)]="editAccount.currency" placeholder="Name" />
+            </div>
+            <div>Wallet:
+                <input type="text" name="walletAddress" [(ngModel)]="editAccount.walletAddress" placeholder="Wallet" />
+            </div>
+            <button data-close-modal (click)="closeEditDialog()">Close</button>
+            <button data-submit-modal (click)="updateAccount()">Update</button>
+        </form>
+    </dialog>
+</div>
