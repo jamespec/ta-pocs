@@ -6,11 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./site-header.component.css']
 })
 export class SiteHeaderComponent {
-
+  activePage: string = 'Accounts'
   constructor(
   ) { }
 
   ngOnInit() {
   }
 
+  setActivePage( page: string ) {
+    this.activePage = page
+  }
 }

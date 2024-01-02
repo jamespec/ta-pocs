@@ -15,7 +15,7 @@ import { MatPaginator } from '@angular/material/paginator';
 export class AccountListComponent implements OnInit, AfterViewInit {
   accounts!: IAccount[]
 
-  displayedColumns: string[] = ['fsrAccount', 'name', 'currency', 'walletAddress']
+  displayedColumns: string[] = ['fsrAccount', 'name', 'currency', 'walletAddress', 'editButton']
   dataSource!: MatTableDataSource<IAccount>
   dataInitialized: boolean = false
 

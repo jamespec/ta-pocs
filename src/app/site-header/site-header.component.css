@@ -3,6 +3,10 @@
     justify-content: left;
 }
 
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
 .logo {
     height: 125px;
     margin-top: 0px;

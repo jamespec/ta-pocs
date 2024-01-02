@@ -2,13 +2,28 @@
   <div>
     <img class="logo" src="/assets/images/bnym_logo.png" alt="Logo" />
   </div>
-  <div class="title">Transfer Agent for Digital Assets</div>
 </div>
-<div class="menu">
-  <div>
-    <a>Home</a>
-    <a class="item" routerLink="/accounts" routerLinkActive="active">Accounts</a>
-    <a class="item" routerLink="/funds" routerLinkActive="active">Funds</a>
-    <a class="item" routerLink="/instructions" routerLinkActive="active">Instructions</a>
-  </div>
+<div>
+  <mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Transfer Agent for Digital Assets</span>
+    <span class="toolbar-spacer"></span>
+    <span name="menu">{{activePage}}</span>
+  </mat-toolbar>
 </div>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="setActivePage('Accounts')" routerLink="/accounts" routerLinkActive="active">
+    <mat-icon>account_circle</mat-icon>
+    <span>Accounts</span>
+  </button>
+  <button mat-menu-item (click)="setActivePage('Funds')" routerLink="/funds" routerLinkActive="active">
+    <mat-icon>monetization_on</mat-icon>
+    <span>Funds</span>
+  </button>
+  <button mat-menu-item (click)="setActivePage('Instructions')" routerLink="/instructions" routerLinkActive="active">
+    <mat-icon>payments</mat-icon>
+    <span>Instructions</span>
+  </button>
+</mat-menu>
