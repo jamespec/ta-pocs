@@ -1,59 +1,12 @@
-ul {
-    margin-top: 0px;
+.container {
+    margin: 15px;
 }
 
-.instruction {
-    display: flex;
-    justify-content: left;
-
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 10px;
+table {
+    width: 100%;
 }
 
-.instruction-header {
-    padding-top: 16px;
-    font-size: 18px;
-    font-weight: bold;
-    border-bottom: 2px solid #818285;
+th.mat-sort-header-sorted {
+    color: black;
 }
 
-.instruction-item {
-    font-size: 14px;
-    border-bottom: 2px solid #818285;
-}
-
-.instructionId {
-    display: flex;
-    justify-content: center;
-
-    width: 60px;
-    padding-right: 0px;
-}
-
-.action {
-    width: 40px;
-    display: flex;
-    justify-content: center;
-}
-
-.amount {
-    width: 100px;
-    display: flex;
-    justify-content: right;
-    padding-right: 20px;
-}
-
-.securityId {
-    width: 100px;
-}
-
-.fsrAccount {
-    width: 110px;
-}
-
-.tradeDate {
-    width: 100px;
-}

@@ -31,7 +31,7 @@
                 <th mat-header-cell *matHeaderCellDef>
                 </th>
                 <td mat-cell *matCellDef="let account">
-                    <button mat-icon-button color="primary">
+                    <button mat-icon-button color="primary" (click)="openDialog(account)">
                         <mat-icon>edit</mat-icon>
                       </button>
 
@@ -44,7 +44,7 @@
         </table>
 
         <mat-paginator [pageSizeOptions]="[1, 5, 10, 20]" [pageSize]="5" showFirstLastButtons
-            aria-label="Select page of periodic elements">
+            aria-label="Select page of Accounts">
         </mat-paginator>
     </div>
 </div>

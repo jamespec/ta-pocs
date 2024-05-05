@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IFund } from './fund.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FundsService } from './funds.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-fund-list',
@@ -10,7 +13,13 @@ import { FundsService } from './funds.service';
 })
 export class FundListComponent {
   funds!: IFund[]
-  sortBy: string = ''
+
+  displayedColumns: string[] = ['securityId', 'fundNumber', 'fundName', 'deployAddress', 'editButton']
+  dataSource!: MatTableDataSource<IFund>
+  dataInitialized: boolean = false
+
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
     private fundsSrv: FundsService,
@@ -19,17 +28,19 @@ export class FundListComponent {
   ) { }
 
   ngOnInit() {
-    console.log('ngOnInit - AccountListComponent')
-    this.fundsSrv.getFunds().subscribe( (funds) => { this.funds = funds})
-
-    this.route.queryParams.subscribe( (params) => {
-      this.sortBy = params['sortBy'] ?? ''
-      // console.log(`Filter: ${this.sortBy}`)
+    console.log('ngOnInit - FundListComponent')
+    this.fundsSrv.getFunds().subscribe((funds) => {
+      this.funds = funds
+      this.dataSource = new MatTableDataSource<IFund>(this.funds)
+      this.dataInitialized = true
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
     })
   }
 
-  getSortedFunds(): IFund[] {
-    // console.log(`getSortedFunds of: ${JSON.stringify(this.funds)}`)
-    return this.funds;
+  ngAfterViewInit() {
+    console.log()
+    if (this.dataInitialized) {
+    }
   }
 }

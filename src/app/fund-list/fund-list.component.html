@@ -1,17 +1,50 @@
 <div class="container">
-    <div class="funds fund-header">
-        <div class="securityId">{{ "SecurityId" }}</div>
-        <div class="fundNumber">{{ "Fund Number" }}</div>
-        <div class="fundName">{{ "Fund Name" }}</div>
-        <div class="deployAddress">{{ "Deploy Address" }}</div>
-    </div>
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
 
-    <ul>
-        <li class="funds fund-item" *ngFor="let fund of getSortedFunds()">
-            <div class="securityId">{{ fund.securityId }}</div>
-            <div class="fundNumber">{{ fund.fundNumber }}</div>
-            <div class="fundName">{{ fund.fundName }}</div>
-            <div class="deployAddress">{{ fund.deployAddress }}</div>
-        </li>
-    </ul>
+            <!-- Account Column -->
+            <ng-container matColumnDef="securityId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> SecurityId </th>
+                <td mat-cell *matCellDef="let fund"> {{fund.securityId}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="fundNumber">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> FundNumber </th>
+                <td mat-cell *matCellDef="let fund"> {{fund.fundNumber}} </td>
+            </ng-container>
+
+            <!-- Curency Column -->
+            <ng-container matColumnDef="fundName">
+                <th mat-header-cell *matHeaderCellDef> FundName </th>
+                <td mat-cell *matCellDef="let fund"> {{fund.fundName}} </td>
+            </ng-container>
+
+            <!-- WalletAddress Column -->
+            <ng-container matColumnDef="deployAddress">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> DeployAddress </th>
+                <td mat-cell *matCellDef="let fund"> {{fund.deployAddress}} </td>
+            </ng-container>
+
+            <!-- Edit Button Column -->
+            <ng-container matColumnDef="editButton">
+                <th mat-header-cell *matHeaderCellDef>
+                </th>
+                <td mat-cell *matCellDef="let fund">
+                    <button mat-icon-button color="primary">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+
+<!--                    <mat-icon fontIcon="edit"></mat-icon> -->
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[1, 5, 10, 20]" [pageSize]="5" showFirstLastButtons
+            aria-label="Select page of Funds">
+        </mat-paginator>
+    </div>
 </div>

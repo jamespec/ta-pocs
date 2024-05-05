@@ -6,6 +6,8 @@ import { MatSort } from '@angular/material/sort';
 import { IAccount } from './account.model';
 import { AccountsService } from './accounts.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { AccountEditComponent } from '../account-edit/account-edit.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-account-list',
@@ -22,8 +24,9 @@ export class AccountListComponent implements OnInit, AfterViewInit {
   constructor(
     private accountsSrv: AccountsService,
     private router: Router,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private editDialog: MatDialog
+    ) { }
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -43,5 +46,12 @@ export class AccountListComponent implements OnInit, AfterViewInit {
     console.log()
     if (this.dataInitialized) {
     }
+  }
+  openDialog( account: IAccount ) {
+    this.editDialog.open(AccountEditComponent, {
+      data: {
+        account: account
+      },
+    });
   }
 }
